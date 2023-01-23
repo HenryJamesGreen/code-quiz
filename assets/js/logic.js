@@ -4,13 +4,13 @@ let questionScreen = document.querySelector("#questions");
 let questionTitle = document.querySelector("#question-title");
 let displaychoices = document.querySelector("#choices");
 
+let questionIndex = 0;
+let score = 0;
+
 function startQuiz() {
   startScreen.classList.add("hide");
   questionScreen.classList.remove("hide");
-  for (let i = 0; i < questions.length; i++) {
-    questionTitle.textContent = questions[0].question;
-    displaychoices.textContent = questions.choices;
-  }
+  renderQuestion();
 }
 
 quizStartButton.addEventListener("click", function (event) {
@@ -18,4 +18,8 @@ quizStartButton.addEventListener("click", function (event) {
   startQuiz();
 });
 
-console.log(questions[1].question);
+function renderQuestion() {
+  let question = questions[questionIndex];
+  questionTitle.innerHTML = question.question;
+  displaychoices.innerHTML = question.choices;
+}
