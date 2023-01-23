@@ -2,7 +2,7 @@ let quizStartButton = document.querySelector("#start");
 let startScreen = document.querySelector(".start");
 let questionScreen = document.querySelector("#questions");
 let questionTitle = document.querySelector("#question-title");
-let displaychoices = document.querySelector("#choices");
+let displayChoices = document.querySelector("#choices");
 
 let questionIndex = 0;
 let score = 0;
@@ -21,5 +21,5 @@ quizStartButton.addEventListener("click", function (event) {
 function renderQuestion() {
   let question = questions[questionIndex];
   questionTitle.innerHTML = question.question;
-  displaychoices.innerHTML = question.choices;
+  displayChoices.innerHTML = question.choices;
 }
