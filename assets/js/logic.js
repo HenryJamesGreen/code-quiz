@@ -13,13 +13,23 @@ function startQuiz() {
   renderQuestion();
 }
 
-quizStartButton.addEventListener("click", function (event) {
-  event.preventDefault();
+quizStartButton.addEventListener("click", function () {
   startQuiz();
 });
 
 function renderQuestion() {
   let question = questions[questionIndex];
-  questionTitle.innerHTML = question.question;
-  displayChoices.innerHTML = question.choices;
-}
+  questionTitle.innerHTML = question.ask;
+    question.choices.forEach(element=> { 
+        let btn = document.createElement('button');
+        btn.innerHTML = element;
+        document.body.appendChild(btn);
+      });
+    
+  }
+
+displayChoices.addEventListener("click", function (event) {
+    for(i = 0; i < choices.length; i++) {
+        
+    }
+});
