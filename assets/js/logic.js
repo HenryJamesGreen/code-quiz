@@ -37,7 +37,18 @@ function renderQuestion() {
       let answer = question.correct;
       if (selected === answer) {
         btn.setAttribute("style", "color:green");
+      } else {
+        btn.setAttribute("style", "color:red");
+      }
+      if (questionIndex < questions.length) {
+        questions.shift();
+        console.log(questions);
+        nextQuestion();
+      } else if (questionIndex === questions.length) {
       }
     }
   }
+}
+
+function nextQuestion() {
 }
