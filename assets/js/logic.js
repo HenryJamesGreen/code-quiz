@@ -8,6 +8,7 @@ let questionIndex = 0;
 let score = 0;
 let question = questions[questionIndex];
 let userOptions = question.choices;
+let selected;
 
 function startQuiz() {
   startScreen.classList.add("hide");
@@ -20,35 +21,23 @@ quizStartButton.addEventListener("click", function () {
 });
 
 function renderQuestion() {
-  questionTitle.innerHTML = question.ask;
+  questionTitle.textContent = question.ask;
   console.log(question.ask);
   console.log(question.correct);
   console.log(question.choices);
   for (i = 0; i < userOptions.length; i++) {
     let btn = document.createElement("button");
-    btn.innerHTML = userOptions[i];
+    btn.textContent = userOptions[i];
+    btn.classList.add("button");
+    btn.addEventListener("click", choiceSelect);
     document.body.appendChild(btn);
-    //displayChoices.innerHTML = userOptions;
-    // let btn = document.createElement("button");
-    //btn.innerHTML = userOptions;
-    //document.body.appendChild(btn);
 
-    /*question.choices.forEach((element) => {
-    let btn = document.createElement("button");
-    btn.innerHTML = element;
-    document.body.appendChild(btn);
-    selectedChoices();
-  });*/
+    function choiceSelect(event) {
+      let selected = event.target.textContent;
+      let answer = question.correct;
+      if (selected === answer) {
+        btn.setAttribute("style", "color:green");
+      }
+    }
   }
 }
-/*
-function renderOptions() {
-  let question = questions[questionIndex];
-  let userOptions = question.choices;
-  for (i = 0; i < userOptions.length; i++) {
-    let btn = document.createElement("button");
-    btn.innerHTML = userOptions[i];
-    document.body.appendChild(btn);
-  }
-}
-*/
