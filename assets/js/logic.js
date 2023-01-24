@@ -25,6 +25,10 @@ function renderQuestion() {
   console.log(question.ask);
   console.log(question.correct);
   console.log(question.choices);
+  for (i = 0; i < userOptions.length; i++) {
+    let btn = document.createElement("button");
+    btn.innerHTML = userOptions[i];
+    document.body.appendChild(btn);
   //displayChoices.innerHTML = userOptions;
   // let btn = document.createElement("button");
   //btn.innerHTML = userOptions;
@@ -36,13 +40,16 @@ function renderQuestion() {
     document.body.appendChild(btn);
     selectedChoices();
   });*/
-  renderOptions();
 }
-
+}
+/*
 function renderOptions() {
   let question = questions[questionIndex];
   let userOptions = question.choices;
-  let btn = document.createElement("button");
-  btn.innerHTML = userOptions;
-  document.body.appendChild(btn);
+  for (i = 0; i < userOptions.length; i++) {
+    let btn = document.createElement("button");
+    btn.innerHTML = userOptions[i];
+    document.body.appendChild(btn);
+  }
 }
+*/
