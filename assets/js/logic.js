@@ -6,6 +6,8 @@ let displayChoices = document.querySelector("#choices");
 
 let questionIndex = 0;
 let score = 0;
+let question = questions[questionIndex];
+let userOptions = question.choices;
 
 function startQuiz() {
   startScreen.classList.add("hide");
@@ -18,10 +20,7 @@ quizStartButton.addEventListener("click", function () {
 });
 
 function renderQuestion() {
-  let question = questions[questionIndex];
   questionTitle.innerHTML = question.ask;
-  let userOptions = question.choices;
-
   console.log(question.ask);
   console.log(question.correct);
   console.log(question.choices);
@@ -29,18 +28,18 @@ function renderQuestion() {
     let btn = document.createElement("button");
     btn.innerHTML = userOptions[i];
     document.body.appendChild(btn);
-  //displayChoices.innerHTML = userOptions;
-  // let btn = document.createElement("button");
-  //btn.innerHTML = userOptions;
-  //document.body.appendChild(btn);
+    //displayChoices.innerHTML = userOptions;
+    // let btn = document.createElement("button");
+    //btn.innerHTML = userOptions;
+    //document.body.appendChild(btn);
 
-  /*question.choices.forEach((element) => {
+    /*question.choices.forEach((element) => {
     let btn = document.createElement("button");
     btn.innerHTML = element;
     document.body.appendChild(btn);
     selectedChoices();
   });*/
-}
+  }
 }
 /*
 function renderOptions() {
