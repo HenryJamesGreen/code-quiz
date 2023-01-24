@@ -20,16 +20,17 @@ quizStartButton.addEventListener("click", function () {
 function renderQuestion() {
   let question = questions[questionIndex];
   questionTitle.innerHTML = question.ask;
-    question.choices.forEach(element=> { 
-        let btn = document.createElement('button');
-        btn.innerHTML = element;
-        document.body.appendChild(btn);
-      });
-    
-  }
+questions.forEach( function (question) {
+  console.log(question.ask);
+  console.log(question.correct);
 
-displayChoices.addEventListener("click", function (event) {
-    for(i = 0; i < choices.length; i++) {
-        
-    }
-});
+
+  
+  /*question.choices.forEach((element) => {
+    let btn = document.createElement("button");
+    btn.innerHTML = element;
+    document.body.appendChild(btn);
+    selectedChoices();
+  });*/
+})}
+
