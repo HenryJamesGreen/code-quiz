@@ -7,10 +7,7 @@ let btn = document.querySelector(".button");
 let endScreen = document.querySelector("#end-screen");
 
 let questionIndex = 0;
-let score = {
-  Correct: 0,
-  Wrong: 0,
-};
+let score = 0;
 let question = questions[questionIndex];
 let userOptions = question.choices;
 let selected;
@@ -42,12 +39,18 @@ function renderQuestion() {
       const selectedIndex = questions[currentQuestion].answers.findIndex(
         (a) => a.text === this.textContent
       );
-      questions[currentQuestion].answers[selectedIndex].value += 1;
+      //questions[currentQuestion].answers[selectedIndex].value += 1;
 
-      const selectedDataIndex =
-        questions[currentQuestion].answers[selectedIndex].dataIndex;
-      score[selectedDataIndex] +=
-        questions[currentQuestion].answers[selectedIndex].value;
+      if (
+        questions[currentQuestion].answers[selectedIndex].dataIndex ===
+        "Correct"
+      ) {
+        score += 10;
+      } else if (
+        questions[currentQuestion].answers[selectedIndex].dataIndex === "Wrong"
+      ) {
+        score += -10;
+      }
 
       currentQuestion++;
       if (currentQuestion === questions.length) {
