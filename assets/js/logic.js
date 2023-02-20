@@ -4,13 +4,13 @@ let questionScreen = document.querySelector("#questions");
 let questionTitle = document.querySelector("#question-title");
 let displayChoices = document.querySelector("#answerForm");
 let btn = document.querySelector(".button");
-
+let endScreen = document.querySelector("#end-screen");
 
 let questionIndex = 0;
 let score = {
   Correct: 0,
   Wrong: 0,
-}
+};
 let question = questions[questionIndex];
 let userOptions = question.choices;
 let selected;
@@ -43,7 +43,7 @@ function renderQuestion() {
         (a) => a.text === this.textContent
       );
       questions[currentQuestion].answers[selectedIndex].value += 1;
-      
+
       const selectedDataIndex =
         questions[currentQuestion].answers[selectedIndex].dataIndex;
       score[selectedDataIndex] +=
@@ -52,7 +52,7 @@ function renderQuestion() {
       currentQuestion++;
       if (currentQuestion === questions.length) {
         console.log("Your scores:", score);
-       // window.location.href = "results.html?scores=" + JSON.stringify(score);
+        generateResults();
       } else {
         renderQuestion();
       }
@@ -60,36 +60,9 @@ function renderQuestion() {
 
     answerForm.appendChild(button);
   });
-
-  //questionTitle.textContent = question.ask;
-  //console.log(question.ask);
-  //console.log(question.correct);
-  //console.log(question.choices);
-  //for (i = 0; i < userOptions.length; i++) {
-  // let btn = document.createElement("button");
-  // btn.textContent = userOptions[i];
-  //  btn.classList.add("button");
-  //btn.addEventListener("click", choiceSelect);
-  // document.body.appendChild(btn);
-
-  // function choiceSelect(event) {
-  //let selected = event.target.textContent;
-  //  let answer = question.correct;
-  //  if (selected === answer) {
-  //    btn.setAttribute("style", "color:green");
-  // } else {
-  //  btn.setAttribute("style", "color:red");
-  // }
-  // if (questionIndex < questions.length) {
-  //  questions.shift();
-  //  console.log(questions);
-  //   nextQuestion();
-  // } else if (questionIndex === questions.length) {
-  //  }
-  // }
-  // }
 }
 
-//function nextQuestion() {
- // renderQuestion();
-//}
+function generateResults() {
+  questionScreen.classList.add("hide");
+  endScreen.classList.remove("hide");
+}
