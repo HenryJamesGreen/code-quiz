@@ -5,6 +5,7 @@ let questionTitle = document.querySelector("#question-title");
 let displayChoices = document.querySelector("#answerForm");
 let btn = document.querySelector(".button");
 let endScreen = document.querySelector("#end-screen");
+let finalScore = document.querySelector("#final-score");
 
 let questionIndex = 0;
 let score = 0;
@@ -68,4 +69,5 @@ function renderQuestion() {
 function generateResults() {
   questionScreen.classList.add("hide");
   endScreen.classList.remove("hide");
+  finalScore.innerText = score;
 }
