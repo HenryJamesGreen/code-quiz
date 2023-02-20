@@ -6,6 +6,8 @@ let displayChoices = document.querySelector("#answerForm");
 let btn = document.querySelector(".button");
 let endScreen = document.querySelector("#end-screen");
 let finalScore = document.querySelector("#final-score");
+let submitBtn = document.querySelector("#submit");
+let initials = document.querySelector("#initials");
 
 let questionIndex = 0;
 let score = 0;
@@ -71,3 +73,14 @@ function generateResults() {
   endScreen.classList.remove("hide");
   finalScore.innerText = score;
 }
+
+submitBtn.addEventListener("click", function () {
+  event.preventDefault();
+  const userName = initials.value;
+  if (userName === " ") {
+    alert("Try again!");
+  } else {
+    //add to local storage.
+    localStorage.setItem(userName, score);
+  }
+});
