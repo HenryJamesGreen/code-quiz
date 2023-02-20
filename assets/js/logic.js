@@ -76,11 +76,11 @@ function generateResults() {
 
 submitBtn.addEventListener("click", function () {
   event.preventDefault();
-  const userName = initials.value;
-  if (userName === " ") {
+  const userName = initials.value.trim(); // use trim() to remove whitespace from the beginning and end of the input
+  if (!userName) {
+    // check if userName is empty or contains only whitespace characters
     alert("Try again!");
   } else {
-    //add to local storage.
     localStorage.setItem(userName, score);
   }
 });
