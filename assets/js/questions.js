@@ -1,22 +1,30 @@
-let questions = [
+let currentQuestion = 0;
+const questions = [
   {
-    ask: "Answer is A",
-    choices: ["A", "B", "C", "D"],
-    correct: "A",
+    text: "what is my name?",
+    answers: [
+      { text: "Henry", value: 0, dataIndex: "Correct" },
+      { text: "Bob", value: 0, dataIndex: "Wrong" },
+      { text: "Peter", value: 0, dataIndex: "Wrong" },
+      { text: "Dave", value: 0, dataIndex: "Wrong" },
+    ],
   },
   {
-    ask: "Answer is B",
-    choices: ["A", "B", "C", "D"],
-    correct: "B",
+    text: "what is my name?",
+    answers: [
+      { text: "Henry", value: 0, dataIndex: "Correct" },
+      { text: "Joe", value: 0, dataIndex: "Wrong" },
+      { text: "Lewis", value: 0, dataIndex: "Wrong" },
+      { text: "Dave", value: 0, dataIndex: "Wrong" },
+    ],
   },
   {
-    ask: "Answer is C",
-    choices: ["A", "B", "C", "D"],
-    correct: "C",
-  },
-  {
-    ask: "Answer is D",
-    choices: ["A", "B", "C", "D"],
-    correct: "D",
+    text: "what is my name?",
+    answers: [
+      { text: "Henry", value: 0, dataIndex: "Correct" },
+      { text: "Mike", value: 0, dataIndex: "Wrong" },
+      { text: "Dean", value: 0, dataIndex: "Wrong" },
+      { text: "Dave", value: 0, dataIndex: "Wrong" },
+    ],
   },
 ];
