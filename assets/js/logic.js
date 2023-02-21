@@ -38,7 +38,6 @@ function renderQuestion() {
   currentAnswers.forEach((answer) => {
     const button = document.createElement("button");
     button.name = "answer";
-    button.classList = "btn btn-primary";
     button.textContent = answer.text;
 
     button.addEventListener("click", function (event) {
@@ -46,7 +45,7 @@ function renderQuestion() {
       const selectedIndex = questions[currentQuestion].answers.findIndex(
         (a) => a.text === this.textContent
       );
-      //questions[currentQuestion].answers[selectedIndex].value += 1;
+      
 
       if (
         questions[currentQuestion].answers[selectedIndex].dataIndex ===
