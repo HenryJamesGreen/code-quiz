@@ -9,6 +9,7 @@ let finalScore = document.querySelector("#final-score");
 let submitBtn = document.querySelector("#submit");
 let initials = document.querySelector("#initials");
 
+
 let questionIndex = 0;
 let score = 0;
 let question = questions[questionIndex];
@@ -82,5 +83,7 @@ submitBtn.addEventListener("click", function () {
     alert("Try again!");
   } else {
     localStorage.setItem(userName, score);
+    submitBtn.disabled = true;
   }
 });
+
