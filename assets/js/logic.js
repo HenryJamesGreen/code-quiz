@@ -55,7 +55,7 @@ function renderQuestion() {
       } else if (
         questions[currentQuestion].answers[selectedIndex].dataIndex === "Wrong"
       ) {
-        score += -10;
+        timeLeft -= 10;
       }
 
       currentQuestion++;
@@ -89,8 +89,8 @@ submitBtn.addEventListener("click", function () {
   }
 });
 
+let timeLeft = 60;
 function startTimer() {
-  let timeLeft = 6;
   let timeInterval = setInterval(function () {
     if (timeLeft >= 1) {
       timer.textContent = timeLeft;
