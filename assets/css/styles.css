@@ -14,7 +14,7 @@ a:hover {
 }
 
 button {
-  display: inline-block;
+  display: block;
   margin: 5px;
   cursor: pointer;
   font-size: 100%;
@@ -24,6 +24,10 @@ button {
   color: white;
   border: 0;
   transition: background-color 0.1s;
+}
+
+#start {
+  display: inline-block;
 }
 
 button:hover {
