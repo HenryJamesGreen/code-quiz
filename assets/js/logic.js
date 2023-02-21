@@ -9,13 +9,14 @@ let finalScore = document.querySelector("#final-score");
 let submitBtn = document.querySelector("#submit");
 let initials = document.querySelector("#initials");
 let timer = document.getElementById("time");
-
+let timeEnd = document.querySelector(".timer");
 
 let questionIndex = 0;
 let score = 0;
 let question = questions[questionIndex];
 let userOptions = question.choices;
 let selected;
+let timeLeft = 60;
 
 function startQuiz() {
   startScreen.classList.add("hide");
@@ -72,6 +73,7 @@ function renderQuestion() {
 }
 
 function generateResults() {
+  timeEnd.classList.add("hide");
   questionScreen.classList.add("hide");
   endScreen.classList.remove("hide");
   finalScore.innerText = score;
@@ -89,7 +91,6 @@ submitBtn.addEventListener("click", function () {
   }
 });
 
-let timeLeft = 60;
 function startTimer() {
   let timeInterval = setInterval(function () {
     if (timeLeft >= 1) {
@@ -98,8 +99,8 @@ function startTimer() {
       timeLeft--;
     } else {
       timer.textContent = "";
-
       clearInterval(timeInterval);
+      generateResults();
     }
   }, 1000);
 }
