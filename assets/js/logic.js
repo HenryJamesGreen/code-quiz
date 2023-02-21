@@ -8,6 +8,7 @@ let endScreen = document.querySelector("#end-screen");
 let finalScore = document.querySelector("#final-score");
 let submitBtn = document.querySelector("#submit");
 let initials = document.querySelector("#initials");
+let timer = document.getElementById("time");
 
 
 let questionIndex = 0;
@@ -24,6 +25,7 @@ function startQuiz() {
 
 quizStartButton.addEventListener("click", function () {
   startQuiz();
+  startTimer();
 });
 
 function renderQuestion() {
@@ -87,3 +89,17 @@ submitBtn.addEventListener("click", function () {
   }
 });
 
+function startTimer() {
+  let timeLeft = 6;
+  let timeInterval = setInterval(function () {
+    if (timeLeft >= 1) {
+      timer.textContent = timeLeft;
+
+      timeLeft--;
+    } else {
+      timer.textContent = "";
+
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+}
