@@ -12,9 +12,9 @@ N/A
 
 ## Usage
 
-Wesbite link:
+Wesbite link: https://henryjamesgreen.github.io/code-quiz/
 
-To start the quiz, click on the "Start Quiz" button. Once clicked, you'll be presented with multiple choice questions, relating to JavaScript. If you choose a correct answer, ten points will be added to your score. If you choose an incorrect one, ten seconds will be deducted from your time. Upon completion (or time running out), you will be given the opportunity to log your initials and final score. This will then be accessible via the "view highscores" option.
+To start the quiz, click on the "Start Quiz" button. Once clicked, you'll be presented with multiple choice questions, relating to JavaScript. If you choose a correct answer, ten points will be added to your score. If you choose an incorrect one, ten seconds will be deducted from your time. Upon completion (or time running out), you will be given the opportunity to log your initials and final score. This will then be accessible via the "view highscores" option. You can also clear these highscores at the click of the "Clear Highscores" button.
 
 ## Credits
 
