@@ -14,8 +14,6 @@ let timeEnd = document.querySelector(".timer");
 let questionIndex = 0;
 let score = 0;
 let question = questions[questionIndex];
-let userOptions = question.choices;
-let selected;
 let timeLeft = 60;
 
 function startQuiz() {
