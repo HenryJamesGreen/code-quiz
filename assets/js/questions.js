@@ -19,7 +19,7 @@ const questions = [
     ],
   },
   {
-    text: "Inside what tag do you write the JavaScript?",
+    text: "Inside what tag do you write the JavaScript location in HTML?",
     answers: [
       { text: "<js>", value: 0, dataIndex: "Wrong" },
       { text: "<script>", value: 0, dataIndex: "Correct" },
@@ -75,6 +75,15 @@ const questions = [
         value: 0,
         dataIndex: "Wrong",
       },
+    ],
+  },
+  {
+    text: "Which of the following declares a function correctly?",
+    answers: [
+      { text: "function exampleOne {...}", value: 0, dataIndex: "Wrong" },
+      { text: "funct exampleOne () {...}", value: 0, dataIndex: "Wrong" },
+      { text: "exampleOne.function () {...}", value: 0, dataIndex: "Wrong" },
+      { text: "function exampleOne () {....}", value: 0, dataIndex: "Correct" },
     ],
   },
 ];
